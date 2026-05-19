@@ -6,14 +6,24 @@ function createHeart() {
   heart.className = "heart";
   heart.textContent = heartChars[Math.floor(Math.random() * heartChars.length)];
   heart.style.left = `${Math.random() * 100}%`;
-  heart.style.fontSize = `${0.6 + Math.random() * 1.2}rem`;
-  heart.style.animationDuration = `${6 + Math.random() * 8}s`;
+  heart.style.fontSize = `${0.5 + Math.random() * 1.4}rem`;
+  heart.style.animationDuration = `${5 + Math.random() * 7}s`;
   heartsContainer.appendChild(heart);
 
   heart.addEventListener("animationend", () => heart.remove());
 }
 
-setInterval(createHeart, 900);
+function spawnHearts(count = 2) {
+  for (let i = 0; i < count; i++) {
+    createHeart();
+  }
+}
+
+setInterval(() => spawnHearts(2), 350);
+
+for (let i = 0; i < 12; i++) {
+  setTimeout(() => createHeart(), i * 120);
+}
 
 const bgMusic = document.getElementById("bgMusic");
 const musicStart = document.getElementById("musicStart");
