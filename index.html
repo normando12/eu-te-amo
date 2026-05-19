@@ -1,83 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Uma declaração de amor especial para você, meu amor." />
-  <title>Eu te amo, meu amor ❤️</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@500;600&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="site-bg" aria-hidden="true"></div>
-
-  <div class="music-start" id="musicStart" hidden>
-    <div class="music-start__card">
-      <p class="music-start__label">Nossa trilha</p>
-      <h2 class="music-start__title">Perfect</h2>
-      <p class="music-start__hint">Toque para abrir com a música ♪</p>
-      <button type="button" class="music-start__btn" id="musicStartBtn">Ouvir com amor</button>
-    </div>
-  </div>
-
-  <button type="button" class="music-toggle" id="musicToggle" aria-label="Pausar música" title="Pausar música" hidden>
-    <span class="music-toggle__icon music-toggle__icon--on" aria-hidden="true">♪</span>
-    <span class="music-toggle__icon music-toggle__icon--off" aria-hidden="true">♫</span>
-  </button>
-
-  <audio id="bgMusic" loop preload="auto">
-    <source src="audio/Ed Sheeran - Perfect(MP3_160K).mp3" type="audio/mpeg" />
-  </audio>
-
-  <div class="hearts" aria-hidden="true"></div>
-
-  <main class="page">
-    <header class="hero">
-      <p class="eyebrow">Para o amor da minha vida</p>
-
-      <div class="hero__stage">
-        <figure class="side-photo side-photo--left">
-          <img
-            src="images/meu.jpg"
-            alt="Nós dois na praia"
-            onerror="this.onerror=null;this.src='images/placeholder.svg';"
-          />
-        </figure>
-
-        <h1 class="title">
-          <span class="line">Eu te amo,</span>
-          <span class="line accent">meu amor</span>
-        </h1>
-
-        <figure class="side-photo side-photo--right">
-          <img
-            src="images/meu.jpg"
-            alt="Nós dois na praia"
-            onerror="this.onerror=null;this.src='images/placeholder.svg';"
-          />
-        </figure>
-      </div>
-    </header>
-
-    <section class="letter">
-      <p>
-        Cada onda que bate na areia me lembra o quanto a vida é mais bonita
-        ao seu lado. Você é meu porto seguro, minha alegria e o motivo do meu sorriso.
-      </p>
-      <p>
-        Obrigado por existir, por caminhar comigo e por transformar dias comuns
-        em memórias inesquecíveis. Hoje e sempre: <strong>eu te amo, meu amor.</strong>
-      </p>
-      <p class="signature">Com todo o meu coração ♥</p>
-    </section>
-
-    <footer class="footer">
-      <p>Feito com amor · Para sempre</p>
-    </footer>
-  </main>
-
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Uma declaração de amor especial para você, meu amor." />
+    <title>Eu te amo, meu amor ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

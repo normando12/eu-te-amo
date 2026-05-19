@@ -1,27 +1,17 @@
 # Eu te amo, meu amor ❤️
 
-Site romântico com declaração de amor.
+Landing page romântica premium — React, Tailwind CSS e Framer Motion.
 
-## Adicionar sua foto
+## Desenvolvimento
 
-A foto deve estar em `images/meu.jpg`.
-
-## Música (Perfect)
-
-Coloque o arquivo da música em:
-
-```
-audio/perfect.mp3
+```bash
+npm install
+npm run dev
 ```
 
-(Ed Sheeran — *Perfect*, em MP3. Use um arquivo que você tenha direito de usar.)
+## Publicar (Netlify)
 
-## Publicar na Netlify
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
 
-1. Envie este projeto para o GitHub (repositório público).
-2. Acesse [app.netlify.com](https://app.netlify.com) → **Add new site** → **Import an existing project**.
-3. Conecte o GitHub e escolha este repositório.
-4. Deixe **Build command** em branco e **Publish directory** como `.` (raiz).
-5. Clique em **Deploy site**.
-
-O arquivo `netlify.toml` já está configurado.
+Assets em `public/images` e `public/audio`.

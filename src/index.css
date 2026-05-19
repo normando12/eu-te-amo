@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen overflow-x-hidden bg-wine-950 text-white antialiased;
+    font-family: "Outfit", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-glow-pink {
+    text-shadow:
+      0 0 20px rgba(255, 77, 157, 0.8),
+      0 0 40px rgba(255, 45, 111, 0.4);
+  }
+
+  .border-glow {
+    box-shadow:
+      0 0 15px rgba(255, 77, 157, 0.4),
+      inset 0 0 15px rgba(255, 77, 157, 0.08);
+  }
+}
