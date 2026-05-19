@@ -11,14 +11,14 @@
   --sand-dark: #e8d5c4;
   --ocean: #7eb8c9;
   --ocean-deep: #4a8fa3;
-  --olive: #8b9a6b;
+  --olive: #c5d4a0;
   --sun: #f4d58d;
-  --rose: #c97b84;
-  --rose-soft: #e8a0a8;
-  --text: #3d3a36;
-  --text-soft: #6b6560;
-  --white: #fffdf9;
-  --shadow: rgba(61, 58, 54, 0.12);
+  --rose: #e8a0a8;
+  --rose-soft: #f0b8be;
+  --text: #f8f4ef;
+  --text-soft: #d4cfc8;
+  --white: rgba(12, 12, 14, 0.82);
+  --shadow: rgba(0, 0, 0, 0.45);
 }
 
 html {
@@ -29,11 +29,32 @@ body {
   min-height: 100vh;
   font-family: "Quicksand", system-ui, sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(244, 213, 141, 0.35), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(126, 184, 201, 0.2), transparent),
-    linear-gradient(165deg, var(--sand) 0%, var(--white) 45%, #eef6f8 100%);
+  background-color: #000;
   overflow-x: hidden;
+}
+
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: #000;
+  background-image: url("images/fundo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.site-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  pointer-events: none;
 }
 
 .hearts {
@@ -48,7 +69,7 @@ body {
   position: absolute;
   bottom: -2rem;
   font-size: 1rem;
-  color: var(--rose-soft);
+  color: #7fff7f;
   opacity: 0;
   animation: float-up linear forwards;
 }
@@ -148,7 +169,7 @@ body {
 .title .accent {
   font-style: italic;
   font-weight: 400;
-  background: linear-gradient(120deg, var(--rose), var(--ocean-deep));
+  background: linear-gradient(120deg, #f4d58d, #7fff7f, var(--rose));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -161,13 +182,13 @@ body {
 }
 
 .letter {
-  background: rgba(255, 253, 249, 0.75);
-  backdrop-filter: blur(12px);
+  background: var(--white);
+  backdrop-filter: blur(14px);
   border-radius: 1rem;
   padding: 1.75rem 1.5rem;
   margin-bottom: 2rem;
   box-shadow: 0 8px 32px var(--shadow);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   text-align: left;
   animation: fade-in 1.2s 0.3s ease-out both;
 }
@@ -217,7 +238,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: rgba(61, 58, 54, 0.45);
+  background: rgba(0, 0, 0, 0.65);
   backdrop-filter: blur(8px);
   animation: fade-in 0.6s ease-out both;
 }
@@ -232,9 +253,9 @@ body {
   padding: 2rem 1.75rem;
   text-align: center;
   border-radius: 1.25rem;
-  background: var(--white);
+  background: rgba(18, 18, 20, 0.92);
   box-shadow: 0 24px 60px var(--shadow);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .music-start__label {
@@ -293,10 +314,11 @@ body {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  background: rgba(255, 253, 249, 0.9);
+  background: rgba(12, 12, 14, 0.85);
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 20px var(--shadow);
-  color: var(--rose);
+  color: #7fff7f;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   font-size: 1.25rem;
   display: flex;
   align-items: center;
