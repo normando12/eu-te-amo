@@ -94,14 +94,24 @@ body {
 .page {
   position: relative;
   z-index: 1;
-  max-width: 520px;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 2.5rem 1.25rem 3rem;
+  padding: 2rem 1rem 3rem;
   text-align: center;
 }
 
 .hero {
   animation: fade-in 1.2s ease-out both;
+  margin-bottom: 0.5rem;
+}
+
+.hero__stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.4rem, 2.5vw, 1.25rem);
+  min-height: min(38vh, 300px);
+  margin-bottom: 0.5rem;
 }
 
 @keyframes fade-in {
@@ -115,70 +125,65 @@ body {
   }
 }
 
-.photo-frame {
-  position: relative;
-  width: min(100%, 340px);
-  margin: 0 auto 2rem;
-  border-radius: 1.25rem;
-  padding: 0.5rem;
-  background: linear-gradient(135deg, var(--sun), var(--rose-soft), var(--ocean));
+.side-photo {
+  flex: 0 0 auto;
+  width: clamp(76px, 20vw, 130px);
+  margin: 0;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 2px solid rgba(127, 255, 127, 0.4);
   box-shadow:
-    0 20px 50px var(--shadow),
-    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    0 10px 30px rgba(0, 0, 0, 0.55),
+    0 0 18px rgba(127, 255, 127, 0.12);
+  background: #111;
 }
 
-.photo-glow {
-  position: absolute;
-  inset: -20%;
-  background: radial-gradient(circle, rgba(244, 213, 141, 0.25), transparent 70%);
-  z-index: -1;
-  filter: blur(20px);
-}
-
-.couple-photo {
+.side-photo img {
   display: block;
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  border-radius: 0.85rem;
-  background: var(--sand-dark);
 }
 
 .eyebrow {
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--olive);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   font-weight: 500;
 }
 
 .title {
+  flex: 1 1 auto;
+  max-width: min(100%, 280px);
   font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 600;
-  line-height: 1.15;
-  margin-bottom: 2rem;
+  line-height: 1.1;
+  margin-bottom: 0;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.8);
 }
 
 .title .line {
   display: block;
-  font-size: clamp(2.5rem, 10vw, 3.5rem);
+  font-size: clamp(1.75rem, 6.5vw, 2.75rem);
   color: var(--text);
 }
 
 .title .accent {
-  font-style: italic;
-  font-weight: 400;
-  background: linear-gradient(120deg, #f4d58d, #7fff7f, var(--rose));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: "Dancing Script", cursive;
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(2rem, 7.5vw, 3.25rem);
+  color: #7fff7f;
+  -webkit-text-fill-color: #7fff7f;
+  background: none;
   animation: shimmer 4s ease-in-out infinite;
 }
 
 @keyframes shimmer {
   0%, 100% { filter: brightness(1); }
-  50% { filter: brightness(1.15); }
+  50% { filter: brightness(1.2); }
 }
 
 .letter {
@@ -332,7 +337,7 @@ body {
 
 .music-toggle:hover {
   transform: scale(1.08);
-  background: var(--white);
+  background: rgba(30, 30, 34, 0.95);
 }
 
 .music-toggle.is-paused .music-toggle__icon--on {
@@ -347,12 +352,35 @@ body {
   color: var(--text-soft);
 }
 
+@media (max-width: 380px) {
+  .hero__stage {
+    flex-wrap: wrap;
+    min-height: auto;
+    gap: 0.75rem;
+  }
+
+  .title {
+    order: -1;
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 0.25rem;
+  }
+
+  .side-photo {
+    width: 42%;
+  }
+}
+
 @media (min-width: 480px) {
   .page {
-    padding-top: 3.5rem;
+    padding-top: 2.5rem;
   }
 
   .letter {
     padding: 2rem 2rem;
+  }
+
+  .side-photo {
+    width: 130px;
   }
 }

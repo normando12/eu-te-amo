@@ -7,7 +7,7 @@
   <title>Eu te amo, meu amor ❤️</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@500;600&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -35,21 +35,30 @@
 
   <main class="page">
     <header class="hero">
-      <div class="photo-frame">
-        <img
-          src="images/meu.jpg"
-          alt="Nós dois na praia, de mãos dadas ao vento do mar"
-          class="couple-photo"
-          onerror="this.onerror=null;this.src='images/placeholder.svg';"
-        />
-        <div class="photo-glow"></div>
-      </div>
-
       <p class="eyebrow">Para o amor da minha vida</p>
-      <h1 class="title">
-        <span class="line">Eu te amo,</span>
-        <span class="line accent">meu amor</span>
-      </h1>
+
+      <div class="hero__stage">
+        <figure class="side-photo side-photo--left">
+          <img
+            src="images/meu.jpg"
+            alt="Nós dois na praia"
+            onerror="this.onerror=null;this.src='images/placeholder.svg';"
+          />
+        </figure>
+
+        <h1 class="title">
+          <span class="line">Eu te amo,</span>
+          <span class="line accent">meu amor</span>
+        </h1>
+
+        <figure class="side-photo side-photo--right">
+          <img
+            src="images/meu.jpg"
+            alt="Nós dois na praia"
+            onerror="this.onerror=null;this.src='images/placeholder.svg';"
+          />
+        </figure>
+      </div>
     </header>
 
     <section class="letter">
