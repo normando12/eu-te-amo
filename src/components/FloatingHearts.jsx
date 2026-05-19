@@ -6,14 +6,14 @@ const CHARS = ["♥", "♡", "❤", "💕", "💗"];
 export default function FloatingHearts() {
   const hearts = useMemo(
     () =>
-      Array.from({ length: 28 }, (_, i) => ({
+      Array.from({ length: 65 }, (_, i) => ({
         id: i,
         char: CHARS[i % CHARS.length],
         left: `${Math.random() * 100}%`,
-        size: 0.6 + Math.random() * 1.4,
-        duration: 5 + Math.random() * 8,
-        delay: Math.random() * 6,
-        opacity: 0.25 + Math.random() * 0.5,
+        size: 0.5 + Math.random() * 1.6,
+        duration: 4 + Math.random() * 7,
+        delay: Math.random() * 10,
+        opacity: 0.2 + Math.random() * 0.55,
       })),
     []
   );
