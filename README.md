@@ -4,11 +4,17 @@ Site romântico com declaração de amor.
 
 ## Adicionar sua foto
 
-Copie a foto do casal para:
+A foto deve estar em `images/meu.jpg`.
+
+## Música (Perfect)
+
+Coloque o arquivo da música em:
 
 ```
-images/foto.jpg
+audio/perfect.mp3
 ```
+
+(Ed Sheeran — *Perfect*, em MP3. Use um arquivo que você tenha direito de usar.)
 
 ## Publicar na Netlify
 

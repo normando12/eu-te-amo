@@ -11,6 +11,24 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="music-start" id="musicStart" hidden>
+    <div class="music-start__card">
+      <p class="music-start__label">Nossa trilha</p>
+      <h2 class="music-start__title">Perfect</h2>
+      <p class="music-start__hint">Toque para abrir com a música ♪</p>
+      <button type="button" class="music-start__btn" id="musicStartBtn">Ouvir com amor</button>
+    </div>
+  </div>
+
+  <button type="button" class="music-toggle" id="musicToggle" aria-label="Pausar música" title="Pausar música" hidden>
+    <span class="music-toggle__icon music-toggle__icon--on" aria-hidden="true">♪</span>
+    <span class="music-toggle__icon music-toggle__icon--off" aria-hidden="true">♫</span>
+  </button>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="audio/Ed Sheeran - Perfect(MP3_160K).mp3" type="audio/mpeg" />
+  </audio>
+
   <div class="hearts" aria-hidden="true"></div>
 
   <main class="page">
