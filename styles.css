@@ -1,0 +1,220 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --sand: #f5ebe0;
+  --sand-dark: #e8d5c4;
+  --ocean: #7eb8c9;
+  --ocean-deep: #4a8fa3;
+  --olive: #8b9a6b;
+  --sun: #f4d58d;
+  --rose: #c97b84;
+  --rose-soft: #e8a0a8;
+  --text: #3d3a36;
+  --text-soft: #6b6560;
+  --white: #fffdf9;
+  --shadow: rgba(61, 58, 54, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Quicksand", system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(244, 213, 141, 0.35), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(126, 184, 201, 0.2), transparent),
+    linear-gradient(165deg, var(--sand) 0%, var(--white) 45%, #eef6f8 100%);
+  overflow-x: hidden;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  bottom: -2rem;
+  font-size: 1rem;
+  color: var(--rose-soft);
+  opacity: 0;
+  animation: float-up linear forwards;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.6);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg) scale(1);
+    opacity: 0;
+  }
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+  text-align: center;
+}
+
+.hero {
+  animation: fade-in 1.2s ease-out both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.photo-frame {
+  position: relative;
+  width: min(100%, 340px);
+  margin: 0 auto 2rem;
+  border-radius: 1.25rem;
+  padding: 0.5rem;
+  background: linear-gradient(135deg, var(--sun), var(--rose-soft), var(--ocean));
+  box-shadow:
+    0 20px 50px var(--shadow),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+.photo-glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle, rgba(244, 213, 141, 0.25), transparent 70%);
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.couple-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 0.85rem;
+  background: var(--sand-dark);
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+
+.title .line {
+  display: block;
+  font-size: clamp(2.5rem, 10vw, 3.5rem);
+  color: var(--text);
+}
+
+.title .accent {
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(120deg, var(--rose), var(--ocean-deep));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.15); }
+}
+
+.letter {
+  background: rgba(255, 253, 249, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  padding: 1.75rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  text-align: left;
+  animation: fade-in 1.2s 0.3s ease-out both;
+}
+
+.letter p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-soft);
+  margin-bottom: 1rem;
+}
+
+.letter p:last-child {
+  margin-bottom: 0;
+}
+
+.letter strong {
+  color: var(--rose);
+  font-weight: 600;
+}
+
+.signature {
+  text-align: right;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--rose) !important;
+  margin-top: 0.5rem !important;
+}
+
+.footer {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  letter-spacing: 0.05em;
+  animation: fade-in 1.2s 0.5s ease-out both;
+}
+
+.footer p::before {
+  content: "♥ ";
+  color: var(--rose-soft);
+}
+
+@media (min-width: 480px) {
+  .page {
+    padding-top: 3.5rem;
+  }
+
+  .letter {
+    padding: 2rem 2rem;
+  }
+}
